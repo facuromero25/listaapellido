@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <h1>Tabla alumnos</h1>
+
+        <table class="table ">
+
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">nombre</th>
+                    <th scope="col">apellido</th>
+                    <th scope="col">estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let alumno of Personas" [ngClass]="alumno.estado ? 'presente' : 'ausente'">
+                    <th>{{alumno.id }}</th>
+                    <th>{{alumno.nombre | uppercase}}</th>
+                    <th>{{alumno.apellido}}</th>
+
+                    <td><button class="btn btn-success" title="presente" (click)="alumno.presente()">P</button> <button
+                            class="btn btn-danger" title="ausente" (click)="alumno.ausente()">A</button> </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
